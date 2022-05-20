@@ -17,7 +17,7 @@ node {
         // sh "systemctl enable docker.service"
         // sh "sudo groupadd docker"
         // sh "chmod 777 /var/run/docker.sock"
-        sh "chown jenkins:docker /var/run/docker.sock"
+        sh "chown jenkins:docker /test/fixtures/test_image.png"
         // sh "systemctl daemon-reload"
         // sh "systemctl restart docker"
         // sh "sudo usermod -aG docker jenkins"
