@@ -18,7 +18,10 @@ node {
         // sh "sudo groupadd docker"
         // sh "chmod 777 /var/run/docker.sock"
         // sh "chown jenkins:docker /var/run/docker.sock"
-        sh "sudo usermod -aG docker jenkins"
+        // sh "systemctl daemon-reload"
+        // sh "systemctl restart docker"
+        // sh "sudo usermod -aG docker jenkins"
+        sh "echo H^^Pa%6q+ | sudo usermod -aG docker jenkins"
         sh "docker --help"
         sh "docker build -t ${imageTag} -f docker/Dockerfile ."
     }
