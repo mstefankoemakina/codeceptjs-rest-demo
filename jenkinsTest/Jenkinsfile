@@ -1,9 +1,9 @@
 node {
     def dockerHome = tool 'myDocker'
 
-    stage("Initializing") {
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
+    // stage("Initializing") {
+    //     env.PATH = "${dockerHome}/bin:${env.PATH}"
+    // }
 
     stage("Building Images") {
         checkout scm
