@@ -1,22 +1,26 @@
 node {
     def dockerHome = tool 'myDocker'
 
-    // stage("Initializing") {
-    //     env.PATH = "${dockerHome}/bin:${env.PATH}"
-    // }
+    stage("Initializing") {
+        checkout scm
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+
+    stage("Testing") {
+        echo "Hello world"
+        sh "docker version"
+    }
 
     stage("Building Images") {
-        checkout scm
 
         def customImage = docker.build("my-image:${env.BUILD_ID}")
 
         customImage.inside {
-            sh 'echo "Hello world"'
+            sh 'echo "Hello world from docker"'
         }
     }
 
     stage('Example') {
-        echo "Hello world"
         sh 'echo myCustomVar = $myCustomVar'
     }
 }
