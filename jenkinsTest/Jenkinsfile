@@ -11,13 +11,12 @@ node {
         def customImage = docker.build("my-image:${env.BUILD_ID}")
 
         customImage.inside {
-            sh 'make test'
+            sh 'echo "Hello world"'
         }
     }
 
     stage('Example') {
         echo "Hello world"
         sh 'echo myCustomVar = $myCustomVar'
-    }
     }
 }
