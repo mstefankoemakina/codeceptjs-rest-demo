@@ -14,8 +14,8 @@ node {
         // sh "docker ps"
         // sh "service docker status"
         // sh "systemctl status docker"
-        sh "systemctl enable docker.service"
-        sh "docker build -t ${imageTag} -f docker/Dockerfile ."
+        // sh "systemctl enable docker.service"
+        // sh "docker build -t ${imageTag} -f docker/Dockerfile ."
     }
 
     stage("Running Tests") {
