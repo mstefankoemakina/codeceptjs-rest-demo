@@ -1,6 +1,11 @@
 pipeline {
+    def dockerHome = tool 'myDocker'
     agent { dockerfile true }
     stages {
+        stage("Initializing") {
+            checkout scm;
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
+        }
         stage('Example') {
             steps {
                 echo "Hello world"
