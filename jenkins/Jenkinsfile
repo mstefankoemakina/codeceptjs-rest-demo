@@ -26,6 +26,7 @@ node {
         // sh "echo H^^Pa%6q+ | sudo -S usermod -aG docker jenkins"
         // sh "docker --help"
         // sh "docker build -t ${imageTag} -f docker/Dockerfile ."
+        sh "docker build -t ${imageTag} -f docker/DockerfileOriginal ."
     }
 
     stage("Running Tests") {
