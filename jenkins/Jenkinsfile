@@ -11,12 +11,12 @@ node {
     }
 
     stage("Building Images test") {
-        // sh "sudo docker"
-        sh "sudo docker ps"
-        // sh "sudo service docker status"
-        // sh "sudo dockerd"
-        // sh "sudo systemctl status docker"
-        sh "sudo docker build -t ${imageTag} -f docker/Dockerfile ."
+        // sh "docker"
+        sh "docker ps"
+        // sh "service docker status"
+        sh "dockerd"
+        // sh "systemctl status docker"
+        sh "docker build -t ${imageTag} -f docker/Dockerfile ."
     }
 
     stage("Running Tests") {
