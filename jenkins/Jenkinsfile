@@ -16,6 +16,7 @@ node {
         // sh "systemctl status docker"
         // sh "systemctl enable docker.service"
         // sh "sudo groupadd docker"
+        sh "chmod 777 /var/run/docker.sock"
         sh "chown jenkins:docker /var/run/docker.sock"
         sh "docker --help"
         sh "docker build -t ${imageTag} -f docker/Dockerfile ."
