@@ -11,8 +11,8 @@ node {
     }
 
     stage("Building Images test") {
-        // sh "docker stats"
-        sh "systemctl status docker"
+        sh "docker"
+        // sh "systemctl status docker"
         sh "docker build -t ${imageTag} -f docker/Dockerfile ."
     }
 
