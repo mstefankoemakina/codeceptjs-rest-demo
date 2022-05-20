@@ -1,11 +1,10 @@
 pipeline {
-    agent {
-        docker { image 'selenium/node-chrome' }
-    }
+    agent { dockerfile true }
     stages {
-        stage('Test') {
+        stage('Example') {
             steps {
-                sh 'node --version'
+                echo "Hello world"
+                sh 'echo myCustomVar = $myCustomVar'
             }
         }
     }
