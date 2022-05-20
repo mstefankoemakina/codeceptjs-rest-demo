@@ -1,5 +1,7 @@
 FROM peternguyentr/node-java-chrome:latest
 
+USER root
+
 # Fix certificate issues
 RUN apt-get update --no-install-recommends && \
     apt-get -y install ca-certificates-java && \
