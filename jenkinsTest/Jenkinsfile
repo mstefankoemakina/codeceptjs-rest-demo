@@ -9,6 +9,7 @@ node {
     stage("Testing") {
         echo "Hello world"
         sh "docker version"
+        echo "End testing stage"
     }
 
     stage("Building Images") {
