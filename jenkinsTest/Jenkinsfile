@@ -15,7 +15,7 @@ node {
 
     stage("Building Images") {
 
-        def customImage = docker.build("my-image:${env.BUILD_ID}", "--volume /var/run/docker.sock:/var/run/docker.sock")
+        def customImage = docker.build("my-image:${env.BUILD_ID}") // , "--volume /var/run/docker.sock:/var/run/docker.sock"
 
         customImage.inside {
             sh 'echo "Hello world from docker"'
